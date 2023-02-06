@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\nordi\Documents\Globalen\RayTracer\</FILEPATH>
+      <FILENAME>triangle.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'triangle::normal' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>triangle::{ctor}</FUNCTION>
+    <DECORATED>??0triangle@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>triangle::normal</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\nordi\Documents\Globalen\RayTracer\</FILEPATH>
+      <FILENAME>triangle.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'triangle::v0' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>triangle::{ctor}</FUNCTION>
+    <DECORATED>??0triangle@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>triangle::v0</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\nordi\Documents\Globalen\RayTracer\</FILEPATH>
+      <FILENAME>triangle.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'triangle::v2' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>triangle::{ctor}</FUNCTION>
+    <DECORATED>??0triangle@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>triangle::v2</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\nordi\Documents\Globalen\RayTracer\</FILEPATH>
+      <FILENAME>triangle.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'triangle::v1' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>triangle::{ctor}</FUNCTION>
+    <DECORATED>??0triangle@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>triangle::v1</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\nordi\Documents\Globalen\RayTracer\</FILEPATH>
+      <FILENAME>triangle.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'triangle::color' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>triangle::{ctor}</FUNCTION>
+    <DECORATED>??0triangle@@QAE@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>triangle::color</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

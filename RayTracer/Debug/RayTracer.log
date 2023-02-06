@@ -1,0 +1,19 @@
+﻿  RayTracer.cpp
+C:\Users\nordi\Documents\Globalen\RayTracer\camera.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  camera.cpp
+C:\Users\nordi\Documents\Globalen\RayTracer\camera.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\nordi\Documents\Globalen\RayTracer\camera.cpp(27,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\nordi\Documents\Globalen\RayTracer\camera.cpp(36,15): warning C4101: 'hitDir': unreferenced local variable
+C:\Users\nordi\Documents\Globalen\RayTracer\camera.cpp(214,41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\nordi\Documents\Globalen\RayTracer\camera.cpp(218,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\nordi\Documents\Globalen\RayTracer\camera.cpp(219,15): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Generating Code...
+  RayTracer.vcxproj -> C:\Users\nordi\Documents\Globalen\RayTracer\Debug\RayTracer.exe

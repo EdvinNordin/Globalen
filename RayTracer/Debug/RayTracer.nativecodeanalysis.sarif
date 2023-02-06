@@ -1,0 +1,1259 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6262",
+          "message": {
+            "text": "Function uses '1922708' bytes of stack:  exceeds /analyze:stacksize '16384'.  Consider moving some data to heap."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/nordi/Documents/Globalen/RayTracer/RayTracer.cpp"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 5,
+                  "endLine": 7,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "main",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30146.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00F9D1C0 -il C:\\Users\\nordi\\AppData\\Local\\Temp\\_CL_3a19c2a0ast -typedil -f RayTracer.cpp -Ze -D_MSC_EXTENSIONS -Zp8 -Gs -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930146 -D_MSC_BUILD=0 -D_WIN32 -D_M_IX86=600 -D_M_IX86_FP=2 -GR -D_CPPRTTI -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -DWIN32 -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -FoDebug\\RayTracer.obj -FdDebug\\vc142.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\nordi\\Documents\\Globalen\\RayTracer -analyze:rulesetdirectory ;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/nordi/Documents/Globalen/RayTracer/triangle.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "c2557522ae7ab61942373dcedbb1fdda"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/triangle.h"
+          },
+          "hashes": {
+            "md5": "1cceea95dc7924bdeef55a43ea3751c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/glm.hpp"
+          },
+          "hashes": {
+            "md5": "4ed478b5e5032cc74b279d994cb8e1c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/_fixes.hpp"
+          },
+          "hashes": {
+            "md5": "4dfdbc8d1ac5131c9e96eabec8c52c50"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/setup.hpp"
+          },
+          "hashes": {
+            "md5": "99a57920643c51d7bb40f42b1c2578e6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/simd/platform.h"
+          },
+          "hashes": {
+            "md5": "e3643baa84647231461e4a1a7b31c542"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/fwd.hpp"
+          },
+          "hashes": {
+            "md5": "0062418b4a95226df5a758c8c62a08a1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/qualifier.hpp"
+          },
+          "hashes": {
+            "md5": "3467b096cea991f3ea46de9f9e71470d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/vec2.hpp"
+          },
+          "hashes": {
+            "md5": "de8dc4b41d16673a5b83cb63dd29bc61"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_bool2.hpp"
+          },
+          "hashes": {
+            "md5": "6233764c7af33f5407dfe627bb077421"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_vec2.hpp"
+          },
+          "hashes": {
+            "md5": "716e73b4d2c887a9270e88c337db4a61"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_vec2.inl"
+          },
+          "hashes": {
+            "md5": "8cedf2d509b0e4e58be0a549bef537e4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/compute_vector_relational.hpp"
+          },
+          "hashes": {
+            "md5": "5965f9009e4c65de014c5a33b0cefc64"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_bool2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "1ad7346d197abecfb1a87ee770cc3b58"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_float2.hpp"
+          },
+          "hashes": {
+            "md5": "90760022c36019ffa0b8105f37992ef5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_float2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "f757b628bc85854ba161e1b6cc02793b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_double2.hpp"
+          },
+          "hashes": {
+            "md5": "f86b8daf2c5a15c20adeeda3fdce67f5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_double2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "d71ac88bb1afbaca2d279e869680a163"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_int2.hpp"
+          },
+          "hashes": {
+            "md5": "2c56575f4ae8bf26746033653acfbece"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_int2_sized.hpp"
+          },
+          "hashes": {
+            "md5": "6e97f2b284f0adacdb0484dfc7d38ab7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/scalar_int_sized.hpp"
+          },
+          "hashes": {
+            "md5": "22ce09a2eca291336878993aa7091464"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_uint2.hpp"
+          },
+          "hashes": {
+            "md5": "a800ada5f5b9d08370190ecffc3bf90b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_uint2_sized.hpp"
+          },
+          "hashes": {
+            "md5": "f3a731ed4475a7d97e37ec9a08f42d23"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/scalar_uint_sized.hpp"
+          },
+          "hashes": {
+            "md5": "a907664376c9683e054dafe2e605cebc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/vec3.hpp"
+          },
+          "hashes": {
+            "md5": "d6d7f74f24121bc8189791fb61551b7d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_bool3.hpp"
+          },
+          "hashes": {
+            "md5": "bb0d506a2753f13dd14b17cbf4c62564"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_vec3.hpp"
+          },
+          "hashes": {
+            "md5": "2ba403b59141205e92c8c066e2d0ab7c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_vec3.inl"
+          },
+          "hashes": {
+            "md5": "ae5da9bbc8bed054a1ebe5cb76a647a1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_bool3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "acdc951f407561b15b5009e6ae069397"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_float3.hpp"
+          },
+          "hashes": {
+            "md5": "1d033eafa37c5d1cb2ac0e3fd4b5ff69"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_float3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "356b428a0d7aa0da870de95ff21411a9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_double3.hpp"
+          },
+          "hashes": {
+            "md5": "ae21cf69460e39e2fdb66eb46070b78a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_double3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "2b59a5720847cfa208f1532896018caf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_int3.hpp"
+          },
+          "hashes": {
+            "md5": "0a2486c77ca78ceb6884822860edc894"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_int3_sized.hpp"
+          },
+          "hashes": {
+            "md5": "a78d9243f7ddce663d5c00bfdbe71530"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_uint3.hpp"
+          },
+          "hashes": {
+            "md5": "2121de52b2f29fe3c015f5fadb1c9262"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_uint3_sized.hpp"
+          },
+          "hashes": {
+            "md5": "8081d2fa7ad6d48e6a6aa6951029e952"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/vec4.hpp"
+          },
+          "hashes": {
+            "md5": "199fe0d8889f1c963733fe0d5c406399"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_bool4.hpp"
+          },
+          "hashes": {
+            "md5": "60694c6725fb5ebf4a8572859a33c379"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_vec4.hpp"
+          },
+          "hashes": {
+            "md5": "1fcda5a5448a80480331d7c4895d1a79"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_vec4.inl"
+          },
+          "hashes": {
+            "md5": "3e91c149342bba48a110ef8f15128fdd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_bool4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "9d4c3c4a0324b6a040b07f57afd66b7b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_float4.hpp"
+          },
+          "hashes": {
+            "md5": "c334b6e799decf0d910ae457711745f4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_float4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "c1bd478a2d9e4a0ecf5c38d1c7a5b320"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_double4.hpp"
+          },
+          "hashes": {
+            "md5": "861a5b748198f51b2d7d864334725d6f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_double4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "1459fe6169dcdbce83259bcae91cac6c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_int4.hpp"
+          },
+          "hashes": {
+            "md5": "3e09a9712aaec6337213ee24c4ed7917"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_int4_sized.hpp"
+          },
+          "hashes": {
+            "md5": "c3f8e339cf8168874b8cdd6ab01d3fb4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_uint4.hpp"
+          },
+          "hashes": {
+            "md5": "c70ef59925c1c5bce8e66ce6e0818cc9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/vector_uint4_sized.hpp"
+          },
+          "hashes": {
+            "md5": "fd863e97c52afbc1aba073732238e887"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat2x2.hpp"
+          },
+          "hashes": {
+            "md5": "cce2efe7aa13a7680c431ba92213cdc5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double2x2.hpp"
+          },
+          "hashes": {
+            "md5": "132a56fc9e79ac70bf41a734b3946cf6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat2x2.hpp"
+          },
+          "hashes": {
+            "md5": "8f66592889c0f995874392c985316eb0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat2x2.inl"
+          },
+          "hashes": {
+            "md5": "de8d6f92a8ffa225b0327198e8204a6b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/matrix.hpp"
+          },
+          "hashes": {
+            "md5": "fc6159f4f81b511152982a63b31e01ba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat2x3.hpp"
+          },
+          "hashes": {
+            "md5": "ba553c479ad39f24ae6dbc52e00619a4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double2x3.hpp"
+          },
+          "hashes": {
+            "md5": "acd5b730e35792131eeb42ac54f9f03b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat2x3.hpp"
+          },
+          "hashes": {
+            "md5": "4c5400ef6c0f8fdc516dfecd76d60a6e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat2x3.inl"
+          },
+          "hashes": {
+            "md5": "30214942f24ba0ef834f0536e64e3e21"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double2x3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "4703058bc61056b93633df43405410b9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float2x3.hpp"
+          },
+          "hashes": {
+            "md5": "65fe704f6e6548317bfd3b855eb2ec21"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float2x3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "f9223a380be7ec988eccca339a3a559a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat2x4.hpp"
+          },
+          "hashes": {
+            "md5": "0456c5df441e4dc091fe1196d9f08a18"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double2x4.hpp"
+          },
+          "hashes": {
+            "md5": "e0dbc040d052ec6b80f7e5da77677045"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat2x4.hpp"
+          },
+          "hashes": {
+            "md5": "336040a3b9c65aafa4c5bda0c5d411a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat2x4.inl"
+          },
+          "hashes": {
+            "md5": "1073a4b4ba90ed5b552d2189c4453a51"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double2x4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "0a6fdc1a7b7d6c09bb6c4491a545f738"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float2x4.hpp"
+          },
+          "hashes": {
+            "md5": "d91cdef487294da522c9fc2327356e76"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float2x4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "868cb14afaac053d11c405542cfe3440"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat3x2.hpp"
+          },
+          "hashes": {
+            "md5": "08eae964aa236badac332ffbb0755cd2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double3x2.hpp"
+          },
+          "hashes": {
+            "md5": "ff183ed092d1d1442467b03b052750fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat3x2.hpp"
+          },
+          "hashes": {
+            "md5": "ba958465f8b13fc2dbe818d2171a2e25"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat3x2.inl"
+          },
+          "hashes": {
+            "md5": "58d214a4a1c76c62cb10c8297f1ab631"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double3x2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "b7f7e42d61adee966f8bc71778e25249"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float3x2.hpp"
+          },
+          "hashes": {
+            "md5": "2d293ae2e8d9d9c9fd359f258a149d5b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float3x2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "f75b6448aa0f7fa6bf020f2caa79cf6e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat3x3.hpp"
+          },
+          "hashes": {
+            "md5": "43a0ac823b3c62f586b52eb0c5ba515f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double3x3.hpp"
+          },
+          "hashes": {
+            "md5": "09044fbcb1e9546e6b13bbc7eb5600ce"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat3x3.hpp"
+          },
+          "hashes": {
+            "md5": "0f21abf23c499b58eeee99c6defbeaaa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat3x3.inl"
+          },
+          "hashes": {
+            "md5": "227670a694eff95e01ed8d0ed20bf604"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double3x3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "8968610e2f7373da2fe58d828b3537c8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float3x3.hpp"
+          },
+          "hashes": {
+            "md5": "35239da0a5ba5207a76bd4a357a38df9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float3x3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "0c82253ed6e74860f7ca6eb2742c7187"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat3x4.hpp"
+          },
+          "hashes": {
+            "md5": "4370d98bf647e5d414d70c112b4a266c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double3x4.hpp"
+          },
+          "hashes": {
+            "md5": "c4ab6078d989aa4daae7823790745d32"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat3x4.hpp"
+          },
+          "hashes": {
+            "md5": "ecf9bc880bd42b8d460b27aeb0a6cbd1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat3x4.inl"
+          },
+          "hashes": {
+            "md5": "ef6894203d0123507af7f7ad9ed76534"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double3x4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "fff09f31e39739d417a4d72ffcf59434"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float3x4.hpp"
+          },
+          "hashes": {
+            "md5": "35c58cb48d28910093d5c9891b52e8c7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float3x4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "293a3e92cd38a6093be4dce1e9119cb5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat4x2.hpp"
+          },
+          "hashes": {
+            "md5": "2047f4410df56a88cc8d820c7d2ce5c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double4x2.hpp"
+          },
+          "hashes": {
+            "md5": "e677f7580e742f65433a976e7a51271f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat4x2.hpp"
+          },
+          "hashes": {
+            "md5": "a0bd5ba50c308a8660c2721b0d1edf9a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat4x2.inl"
+          },
+          "hashes": {
+            "md5": "9d502400335fccfc48d3b068ea75767c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double4x2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "d30f3963dbf65d8f404e55a5fca8ab3d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float4x2.hpp"
+          },
+          "hashes": {
+            "md5": "730dc195015782460553b45248d9e7fe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float4x2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "c3fa1e6e33882c39bcbe4d47689e4e6c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat4x3.hpp"
+          },
+          "hashes": {
+            "md5": "ef1193825139d08fb77e0370324245e5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double4x3.hpp"
+          },
+          "hashes": {
+            "md5": "1aa1171942a0f912b243fb8f63c36c06"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat4x3.hpp"
+          },
+          "hashes": {
+            "md5": "b5b9dc44b50b62b230836a79fda78dbb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat4x3.inl"
+          },
+          "hashes": {
+            "md5": "3652cb8a4b1032eea05dfca9ccf364d6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double4x3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "a11d1b7c2b4cea3789533c8ac8e82ef3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float4x3.hpp"
+          },
+          "hashes": {
+            "md5": "f13fe326b5e97b93af916d0652ece102"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float4x3_precision.hpp"
+          },
+          "hashes": {
+            "md5": "d5d0c8f8bb4323707e547c5a6b44ee61"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/mat4x4.hpp"
+          },
+          "hashes": {
+            "md5": "7318e350782b961e2e6d108c766e049a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double4x4.hpp"
+          },
+          "hashes": {
+            "md5": "685be40a13edab9d9c32bfc184ec4460"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat4x4.hpp"
+          },
+          "hashes": {
+            "md5": "f9165caab1646407df482b402388a6ac"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_mat4x4.inl"
+          },
+          "hashes": {
+            "md5": "b887529158c7c2e349d928c4c786dc04"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double4x4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "527844e1b5d58c2c9c2edfa2b612d0d1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float4x4.hpp"
+          },
+          "hashes": {
+            "md5": "7fa5473ae699ce2a2965e916945d64cd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float4x4_precision.hpp"
+          },
+          "hashes": {
+            "md5": "deb2e0a902af84ab5cae6e44544668e4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/func_matrix.inl"
+          },
+          "hashes": {
+            "md5": "db085be6bcd708328033dcfbf8b63cda"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/geometric.hpp"
+          },
+          "hashes": {
+            "md5": "6b54b2b3ec22bfb4e0f65b1054d77718"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/func_geometric.inl"
+          },
+          "hashes": {
+            "md5": "28a8d1cb2b7b3c690cda1164ee8f4db3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/exponential.hpp"
+          },
+          "hashes": {
+            "md5": "d99e8b4841cd03d08c9b47bd252084e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_vec1.hpp"
+          },
+          "hashes": {
+            "md5": "5e1b877fe744d15448e379eb7b41bb42"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_vec1.inl"
+          },
+          "hashes": {
+            "md5": "6e4ed859a7b5d55ac18b9480e63c371a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/func_exponential.inl"
+          },
+          "hashes": {
+            "md5": "df74ff914cd6298d7d9e2128b568ec43"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/vector_relational.hpp"
+          },
+          "hashes": {
+            "md5": "e8f062f6785fe689e03b6ecfe173e497"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/func_vector_relational.inl"
+          },
+          "hashes": {
+            "md5": "dcef9d7968003e1330a2a3e69d5b894d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/_vectorize.hpp"
+          },
+          "hashes": {
+            "md5": "9c441a24dd831feae52227615cdea21f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/common.hpp"
+          },
+          "hashes": {
+            "md5": "f5ed0c7357d03eb05c6314fd827628b7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/func_common.inl"
+          },
+          "hashes": {
+            "md5": "2a2805b67ba8cbae8e586208822b8246"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/compute_common.hpp"
+          },
+          "hashes": {
+            "md5": "04789b2ae9eca21e98bf2835546e0f60"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_double2x2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "b9e5a90f4ad65d09a3fa5f5eb57a56ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float2x2.hpp"
+          },
+          "hashes": {
+            "md5": "230598a32fabd32131609f57f5538509"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/ext/matrix_float2x2_precision.hpp"
+          },
+          "hashes": {
+            "md5": "40562f3159dc49d847b0a54030bab432"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/trigonometric.hpp"
+          },
+          "hashes": {
+            "md5": "558971545eddad737891d3ad82f8fbab"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/func_trigonometric.inl"
+          },
+          "hashes": {
+            "md5": "852c47313491a11e8cc250a9ac7a8edd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/packing.hpp"
+          },
+          "hashes": {
+            "md5": "3e5497e128c7deda213ed8765e28842b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/func_packing.inl"
+          },
+          "hashes": {
+            "md5": "f2fef7f9ea746325f34d0b56c987e8dc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_half.hpp"
+          },
+          "hashes": {
+            "md5": "e93438412aa8d6097c9443598725db6a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/type_half.inl"
+          },
+          "hashes": {
+            "md5": "8b78c3cdbd567423f93ee6b9e5e6d776"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/integer.hpp"
+          },
+          "hashes": {
+            "md5": "d7df89c8e3ef7ce9f1402b3680c3c69e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/detail/func_integer.inl"
+          },
+          "hashes": {
+            "md5": "9f7bdf303bb53b74652e9143df17b66c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/gtx/intersect.hpp"
+          },
+          "hashes": {
+            "md5": "e2267ab09bd50040f1841aeabbca784b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/gtx/closest_point.hpp"
+          },
+          "hashes": {
+            "md5": "e4ed682372b23c5fea1143f1692232ee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/gtx/closest_point.inl"
+          },
+          "hashes": {
+            "md5": "a62a67e99e119b46e012b5be8fb4e048"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/gtx/vector_query.hpp"
+          },
+          "hashes": {
+            "md5": "3eb135ffb0d047c9bc84d88fc4a8e73c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/gtx/vector_query.inl"
+          },
+          "hashes": {
+            "md5": "6942b9c5c3ca247884bf7d0c55e086a7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/gtx/intersect.inl"
+          },
+          "hashes": {
+            "md5": "af7def0be15b8d4fd71a45f6dff750f1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/sphere.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "3d472b7858eb270bbdf3e330ae1f1fe0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/sphere.h"
+          },
+          "hashes": {
+            "md5": "e8f4ca3b5a2d41576b435e7ee82ced00"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/scene.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "a37c351931fa4354ad5add0e968c40cd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/scene.h"
+          },
+          "hashes": {
+            "md5": "cd7b71a0cb1070b475faeda55100ae07"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/gtx/normal.hpp"
+          },
+          "hashes": {
+            "md5": "b14be09158adbebf06693e2ff8ba413a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/glm/gtx/normal.inl"
+          },
+          "hashes": {
+            "md5": "26859d3ee61219b27cc913327c544ff2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/nordi/Documents/Globalen/RayTracer/RayTracer.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "1ae45bf4de81a6c8c512cb060de0a529"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/nordi/documents/globalen/raytracer/camera.h"
+          },
+          "hashes": {
+            "md5": "fb74fdfa77ee3e934d3f66b2039e7cee"
+          }
+        }
+      ]
+    }
+  ]
+}
