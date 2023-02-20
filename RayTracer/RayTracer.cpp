@@ -3,10 +3,13 @@
 
 #include <iostream>
 #include "camera.h"
+#include <time.h>
 
 int main()
 {
 
+    clock_t tStart = clock();
+    srand(time(0));
     //std::cout << glm::triangleNormal(glm::vec3(8, 1, -2), glm::vec3(10, 5, -2), glm::vec3(12, 1, -2)).x << " " << glm::triangleNormal(glm::vec3(8, 1, -2), glm::vec3(12, 1, -2), glm::vec3(10, 5, -2)).y << " " << glm::triangleNormal(glm::vec3(8, 1, -2), glm::vec3(12, 1, -2), glm::vec3(10, 5, -2)).z << " ";
     scene scene;
     scene.setScene();
@@ -14,6 +17,7 @@ int main()
     camera camera;
     camera.setPlane(scene);
     camera.makeImage();
+    printf("Time taken: %.2fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

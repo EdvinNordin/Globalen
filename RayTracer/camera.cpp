@@ -8,177 +8,113 @@ camera::camera() {};
 void camera::setPlane(scene &myScene) {
 	triangle myTriangle;
 	sphere theSphere;
-	float SS = 16.0f;
+	float SS = 10.0f;
 	float sqrtSS = sqrt(SS);
-	glm::vec3 eyePos = glm::vec3(-1, 0, 0);
+	int out = 0;
+	glm::vec3 eyePos = glm::vec3(-2, 0, 0);
 	for (int i = 0; i < dim; i++) {
-		
+		if (i % (dim / 100) == 0) {
+			std::cout << out << "%" << std::endl;
+			out++;
+		}
 		for (int j = 0; j < dim; j++) {
-			if (i%(dim/10) == 0 && j == 0) {
-				std::cout << i/ (dim / 100) << "%" << std::endl;
-			}
+			
 			glm::vec3 ssColor = glm::vec3(0, 0, 0);
 
-			int SScoefI = 0;
-			int SScoefJ = -1;
+
+			float randomY = (rand() % 1000 / 10000.0f) * 2.0f - 1.0f;
+			float randomZ = (rand() % 1000 / 10000.0f) * 2.0f - 1.0f;
 			for (int l = 0; l < SS; l++)
 			{
-				
-				SScoefI = (l % (int)sqrtSS) / sqrtSS;
-				if (SScoefI == 0) SScoefJ++;
-
 				glm::vec3 pixelPos = glm::vec3(0, i * (2.0f / dim) - (1 - (1 / dim)), j * (2.0f / dim) - (1 - (1 / dim))); //skillnaden är 2/dim
-				//pixelPos = glm::vec3(pixelPos.x, pixelPos.y + 2.0f/(dim*3.0f) * SScoefI, pixelPos.z + 2.0f / (dim * 3.0f) * SScoefJ);
+				pixelPos = glm::vec3(pixelPos.x, pixelPos.y + randomY * 2 / dim, pixelPos.z + randomZ*2/dim);
 				glm::vec3 dir = pixelPos - eyePos;
 
-				glm::vec3 intersect;
-				glm::vec3 hitPos = glm::vec3(0,0,0);
-				glm::vec3 hitDir;
-				glm::vec3 color = glm::vec3(0,0,0);
-				float t;
-				float min = 999999;
 				triangle triangleHit = myScene.getTriangle(0);
-				bool hitSphere = false;
-				sphere sphereHit;
-
-				//find intersection point and object
-				for (int k = 0; k < 30; k++) {
-				
-					myTriangle = myScene.getTriangle(k);
-					if (rayTriangleIntersect(eyePos, dir, myTriangle.getv0(), myTriangle.getv1(), myTriangle.getv2(), t, intersect))
-					{
-						if (t < min && t > 0) {
-							min = t;
-							color = myTriangle.getColor();
-							triangleHit = myTriangle;
-							hitPos = intersect;
-							color = myTriangle.getColor();
-						}
-					}
-				}
 				sphere mySphere = myScene.getSphere();
-				if (IntersectRaySphere(eyePos, dir, mySphere, t, intersect)) {
-					if (t < min && t > 0) {
-						min = t;
-						color = mySphere.getColor();
-						hitPos = intersect;
-						hitSphere = true;
-					}
+				bool hitSphere = false;
+				glm::vec3 color = glm::vec3(0,0,0);
+				if (i == dim - 117.0f && j == dim - 187.0f) {
+					bool hej = true;
 				}
-				if (j == 4 && l == 12) {
-						bool hej = true;
-				}
-				glm::vec3 directColor = glm::clamp(calculateDirectLight(hitPos, triangleHit, mySphere, hitSphere, myScene), 0.0f, 1.0f);
 				
-				if (hitSphere == true) {
-					dir = getSphereBounceDir(mySphere, eyePos, dir, hitPos);
-					glm::vec3 indirectColor = glm::clamp(getColorOfBounces(triangleHit, hitSphere, myScene, dir, color, 0, eyePos), 0.0f, 1.0f);
-					color = indirectColor;
-				}
-				else if (glm::linearRand(0.0f, 1.0f) > 0.75f) {
-					dir = getBounceDir(triangleHit, dir);
-					glm::vec3 indirectColor = glm::clamp(getColorOfBounces(triangleHit, hitSphere, myScene, dir, color, 0, eyePos), 0.0f, 1.0f);
-					color = directColor * indirectColor*0.8f;
-				}
-				else {
-					color = directColor;
-				}
-					
+				color = getColorOfBounces(triangleHit, hitSphere, myScene, dir, color, 0, eyePos);					
 				
-				ssColor += glm::clamp(color, 0.0f, 1.0f);
+				ssColor += glm::clamp(color, 0.01f, 0.99f);
 			}
 			plane[i][j] = ssColor / SS;
-
 		}
 	}
-
 };
 
-glm::vec3 camera::getSphereBounce(triangle& myTriangle, bool isSphere, scene& myScene, glm::vec3 dir, glm::vec3 currentColor, int bounces, glm::vec3 oldHitPos) {
-
-	glm::vec3 newHitPos = glm::vec3(-9999, -9999, -9999);
+glm::vec3 camera::getColorOfBounces(triangle &myTriangle, bool &isSphere, scene &myScene, glm::vec3 dir, glm::vec3 currentColor, int bounces, glm::vec3 oldHitPos) {
+	
 	glm::vec3 hitPos;
-	glm::vec3 finalColor = currentColor;
+	glm::vec3 newHitPos = glm::vec3(-99999, -99999, -99999);
+
 	float distance;
 	float min = 999999;
-	float bounceCeof = 0.25;
-	triangle newTriangle;
-	sphere newSphere;
-	for (int k = 0; k < 30; k++) {
 
-		myTriangle = myScene.getTriangle(k);
-		if (rayTriangleIntersect(oldHitPos, dir, myTriangle.getv0(), myTriangle.getv1(), myTriangle.getv2(), distance, hitPos)) {
-			if (distance < min && distance > 0) {
-				min = distance;
-				finalColor = myTriangle.getColor();
-				newTriangle = myTriangle;
-				newHitPos = hitPos;
-			}
-		}
-	}
-	return finalColor;
-}
+	triangle newTriangle = myTriangle;
+	sphere mySphere = myScene.getSphere();
+	isSphere = false;
 
-glm::vec3 camera::getColorOfBounces(triangle &myTriangle, bool isSphere, scene &myScene, glm::vec3 dir, glm::vec3 currentColor, int bounces, glm::vec3 oldHitPos) {
-	
-	float bounceCeof = 0.8f;
-	
-	if (bounces >= 5) {
-		return currentColor * bounceCeof;
+	float bounceCoef = 0.8f;
+
+	if (bounces > 6) {
+		return currentColor * bounceCoef;
 	}
 
 	if (myTriangle.getColor() == myScene.getTriangle(24).getColor()) {
 		return myScene.getTriangle(24).getColor();
 	}
 
-	glm::vec3 newHitPos = oldHitPos;
-	glm::vec3 hitPos;
-	glm::vec3 finalColor = currentColor;
-	float distance;
-	float min = 999999;
-	triangle newTriangle = myTriangle;
-	sphere newSphere;
-	isSphere = false;
-	for (int k = 0; k < 30; k++) {
 
+	for (int k = 0; k < 30; k++) {
 		myTriangle = myScene.getTriangle(k);
 		if(rayTriangleIntersect(oldHitPos, dir, myTriangle.getv0(), myTriangle.getv1(), myTriangle.getv2(), distance, hitPos)){
 			if (distance < min && distance > 0) {
 				min = distance;
-				finalColor = myTriangle.getColor();
+				currentColor = myTriangle.getColor();
 				newTriangle = myTriangle;
 				newHitPos = hitPos;
 			}
 		}
 	}
-	sphere mySphere = myScene.getSphere();
 	if (IntersectRaySphere(oldHitPos, dir, mySphere, distance, hitPos)) {
 		if (distance < min && distance > 0) {
 			min = distance;
 			newHitPos = hitPos;
 			isSphere = true;
-			bounceCeof = 1;
+			bounceCoef = 1;
 		}
 	}
 
-	if (isSphere) {
-		dir = getSphereBounceDir(mySphere, newHitPos, dir, oldHitPos);
-	}
-	else {
-		dir = getBounceDir(newTriangle, dir);
+	if (newHitPos == glm::vec3(-99999, -99999, -99999)) {
+		//std::cout << oldHitPos.x << std::endl;
 	}
 
+	glm::vec3 indirectColor = glm::vec3(0.001f, 0.001f, 0.001f);
+	glm::vec3 finalColor = glm::vec3(0.001f, 0.001f, 0.001f);
 	glm::vec3 directLight = calculateDirectLight(newHitPos, newTriangle, mySphere, isSphere, myScene);
 
 	bounces++;
+	float random = rand()%1000 / 1000.0f;
+	//std::cout << random << std::endl;
+
 	if (isSphere) {
-		finalColor += getColorOfBounces(newTriangle, isSphere, myScene, dir, finalColor, bounces, newHitPos);
+		dir = getSphereBounceDir(mySphere, newHitPos, dir);
+		return getColorOfBounces(newTriangle, isSphere, myScene, dir, currentColor, bounces, newHitPos);
 	}
-	else if (glm::linearRand(0.0f, 1.0f) > 0.5f) {
-		finalColor += getColorOfBounces(newTriangle, isSphere, myScene, dir, finalColor, bounces, newHitPos);
+	else if (random > 0.75f) {
+		dir = getBounceDir(newTriangle, dir);
+		indirectColor = getColorOfBounces(newTriangle, isSphere, myScene, dir, currentColor, bounces, newHitPos);
+	}
+	else {
+		return directLight * bounceCoef;
 	}
 
-	finalColor = (directLight * finalColor) * bounceCeof;
+	finalColor = indirectColor;
 	return finalColor;
 };
 
@@ -187,109 +123,104 @@ glm::vec3 camera::calculateDirectLight(glm::vec3 point, triangle triangleHit, sp
 	if (triangleHit.getColor() == myScene.getTriangle(24).getColor()) {
 		return triangleHit.getColor();
 	}
-	glm::vec3 Ld, L = glm::vec3(0.0f);
+	glm::vec3 totalL, L = glm::vec3(0.0f);
 	int const numberOfShadowRays = 1;
 	float pi = 3.1415926535897f;
 	triangle myTriangle;
 
-	glm::vec3 v0 = myScene.getTriangle(24).getv0();
-	glm::vec3 v1 = myScene.getTriangle(24).getv1();
-	glm::vec3 v2 = myScene.getTriangle(24).getv2();
+		glm::vec3 v0 = myScene.getTriangle(24).getv0();
+		glm::vec3 v1 = myScene.getTriangle(24).getv1();
+		glm::vec3 v2 = myScene.getTriangle(24).getv2();
 
-	glm::vec3 LightSourceNormal = glm::vec3(0, 0, -1);
+		glm::vec3 LightSourceNormal = glm::vec3(0, 0, -1);
 
-	float A = glm::length(glm::cross(v1 - v0, v2 - v0)) * 0.5f;
-	glm::vec3 q = glm::vec3(0.0f);
-	glm::vec3 DirToPoint = glm::vec3(0.0f);
+		float A = glm::length(glm::cross(v1 - v0, v2 - v0));
+		glm::vec3 lightPoint = glm::vec3(0.0f);
+		glm::vec3 DirToPoint = glm::vec3(0.0f);
 
-	float cosAlpha, cosBeta, u, v, d, Vk = 0.0f;
-	glm::vec3 hit;
-	float t;
-
-	v = -1;
-	//Direct light
-	//Check if the intersection is visible with multiple shadowrays
-	for (int i = 0; i < numberOfShadowRays; i++) {
-
-		u = i % (int)sqrt(numberOfShadowRays) / sqrt(numberOfShadowRays);
-		if (u == 0) v++;
-		//q = u * (v1 - v0) + v * (v2 - v0);
-
-		q.x = 4.0f + 2 * (u / sqrt(numberOfShadowRays));
-		q.y = -1.0f + 2 * (v / sqrt(numberOfShadowRays));
-		q.z = 4.99f;
+		float Alpha, Beta, u, v, d, directLight = 0.0f;
+		glm::vec3 hit;
+		float t;
+		//Direct light
+		//Check if the intersection is visible with multiple shadowrays
+		for (int i = 0; i < numberOfShadowRays; i++) {
 
 
-		DirToPoint = glm::normalize(point - q);
-		d = glm::length(point - q);
+			float randomX = (rand() % 1000 / 10000.0f) * 2.0f - 1.0f;
+			float randomY = (rand() % 1000 / 10000.0f) * 2.0f - 1.0f;
 
-		float min = 999999;
-		float minSphere = 999999;
-		glm::vec3 hitPoint;
-		triangle hitTriangle;
-		if (!isSphere) {
-			for (int j = 26; j < 30; j++) {
+
+			lightPoint.x = 5.0f + randomX * 2.0f;
+			lightPoint.y = 0.0f + randomY * 2.0f;
+			lightPoint.z = 4.99f;
+
+			DirToPoint = glm::normalize(point - lightPoint);
+			d = glm::length(point - lightPoint);
+
+			float min = 999999;
+			float minSphere = 999999;
+			glm::vec3 hitPoint;
+			triangle hitTriangle;
+			bool sphereIsHit = false;
+			bool triangleIsHit = false;
+			directLight = 1.0f;
+
+			for (int j = 0; j < 30; j++) {
 
 				myTriangle = myScene.getTriangle(j);
-				if (rayTriangleIntersect(q, DirToPoint, myTriangle.getv0(), myTriangle.getv1(), myTriangle.getv2(), t, hit)) {
+				if (rayTriangleIntersect(lightPoint, DirToPoint, myTriangle.getv0(), myTriangle.getv1(), myTriangle.getv2(), t, hit)) {
 					if (t < min && t > 0) {
 						min = t;
 						hitPoint = hit;
 						hitTriangle = myTriangle;
+						triangleIsHit = true;
 					}
 				}
 			}
-
-			
-			if (IntersectRaySphere(q, DirToPoint, sphereHit, t, hit)) {
-				if (t < minSphere && t > 0) {
+			if (IntersectRaySphere(lightPoint, DirToPoint, sphereHit, t, hit)) {
+				if (t < min && t > 0) {
 					min = t;
 					hitPoint = hit;
+					sphereIsHit = true;
 				}
 			}
 
-			if (min == 999999) {
-				hitTriangle = triangleHit;
-				Vk = 1.0f;
-			}
-			else if (hitTriangle.getv0() == triangleHit.getv0() && hitTriangle.getv1() == triangleHit.getv1() && hitTriangle.getv2() == triangleHit.getv2()) {
-				Vk = 1.0f;
-			}
-			else if (minSphere != 999999) {
-				Vk = 0.0f;
+			if (d < min + 0.001f && d > min - 0.001f) {
+				directLight = 1.0f;
 			}
 			else {
-				Vk = 0.0f;
+				directLight = 0.01f;
 			}
 
-			if (point.z > 4.99f) {
-				Vk = 0.0f;
+			if (!sphereIsHit) {
+				Alpha = glm::dot((LightSourceNormal), (DirToPoint));
+				Beta = glm::dot((hitTriangle.getNormal()), (-DirToPoint));
+				L += glm::abs(hitTriangle.getColor() * ((Alpha * Beta * directLight) / (d * d))) * 100.0f;
 			}
-
-			cosAlpha = glm::dot((LightSourceNormal), (DirToPoint));
-			cosBeta = glm::dot((hitTriangle.getNormal()), (-DirToPoint));
-			L += glm::abs(hitTriangle.getColor() * ((cosAlpha * cosBeta * Vk) / (d * d))) *100.0f;
+			else {
+				Alpha = glm::dot((LightSourceNormal), (DirToPoint));
+				Beta = glm::dot((point - sphereHit.getPos()), (-DirToPoint));
+				L += glm::abs(((Alpha * Beta * directLight) / (d * d))) * 100.0f;
+			}
 		}
-		else {
-			cosAlpha = glm::dot((LightSourceNormal), (DirToPoint));
-			cosBeta = glm::dot((point - sphereHit.getPos()), (-DirToPoint));
-			L += glm::abs(((cosAlpha * cosBeta * Vk) / (d * d)));
-		}
-	}
-
-	Ld = L * (1.0f / numberOfShadowRays);
-	return glm::clamp(Ld, 0.0f, 1.0f);
+	
+	totalL = L * (1.0f / (numberOfShadowRays));
+	return glm::clamp(totalL, 0.01f, 1.0f);
 }
 
 glm::vec3 camera::getBounceDir(triangle &myTriangle, glm::vec3 incomingDir) {
 
-	glm::vec3 localX = glm::cross(incomingDir, myTriangle.getNormal());
+	/*glm::vec3 localX = glm::cross(incomingDir, myTriangle.getNormal());
 	glm::vec3 localY = glm::cross(localX, incomingDir);
-	glm::vec3 localZ = myTriangle.getNormal();
+	glm::vec3 localZ = myTriangle.getNormal();*/
 
-	float randX = glm::linearRand(0.0f, 1.0f);
-	float randY = glm::linearRand(-1.0f, 1.0f);
-	float randZ = glm::linearRand(-1.0f, 1.0f);
+	glm::vec3 localZ = myTriangle.getNormal();
+	glm::vec3 localX = glm::normalize(myTriangle.getv1() - myTriangle.getv0());
+	glm::vec3 localY = glm::cross(localX, localZ);
+
+	float randX = 2.0f * (float)rand() / RAND_MAX - 1.0f;
+	float randY = 2.0f * (float)rand() / RAND_MAX - 1.0f;
+	float randZ = (float)rand() / RAND_MAX;
 
 	glm::vec3 randDir = glm::vec3((localX * randX) + (localY * randY) + (localZ * randZ));
 	glm::vec3 normRandDir = glm::normalize(randDir);
@@ -297,7 +228,7 @@ glm::vec3 camera::getBounceDir(triangle &myTriangle, glm::vec3 incomingDir) {
 	return normRandDir;
 };
 
-glm::vec3 camera::getSphereBounceDir(sphere& mySphere, glm::vec3 prevHit, glm::vec3 incomingDir, glm::vec3 hitPos) {
+glm::vec3 camera::getSphereBounceDir(sphere& mySphere, glm::vec3 hitPos, glm::vec3 incomingDir) {
 	//R= I - 2(I * N)N specular bounce
 
 	incomingDir = glm::normalize(incomingDir);
@@ -425,4 +356,3 @@ void camera::makeImage() {
 	}
 	fclose(fp);
 };
-
